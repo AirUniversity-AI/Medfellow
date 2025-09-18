@@ -1,7 +1,8 @@
 # app.py - Vercel entry point
 from main import app
 
-# Vercel expects the Flask app to be named 'app'
-# This file serves as the entry point for Vercel deployment
+# This is the WSGI application that Vercel will use
+# Vercel expects the Flask app to be available as 'app'
+
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=False)
