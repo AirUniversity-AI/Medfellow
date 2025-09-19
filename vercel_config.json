@@ -1,15 +1,16 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "main.py",
-      "use": "@vercel/python"
+  "functions": {
+    "api/*.py": {
+      "runtime": "python3.9",
+      "maxDuration": 60
     }
-  ],
+  },
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "main.py"
-    }
+    { "src": "/", "dest": "/api/test" },
+    { "src": "/health", "dest": "/api/health" },
+    { "src": "/test", "dest": "/api/test" },
+    { "src": "/fetch-subjects", "dest": "/api/fetch-subjects" },
+    { "src": "/fetch-topics", "dest": "/api/fetch-topics" },
+    { "src": "/fetch-questions-by-topic", "dest": "/api/fetch-questions-by-topic" }
   ]
 }
